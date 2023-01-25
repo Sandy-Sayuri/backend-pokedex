@@ -2,6 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { FilmModule } from './film/film.module';
+import { PokemonModule } from './pokemon/pokemon.module';
+import { TypeModule } from './type/type.module';
+
 
 
 @Module({
@@ -18,7 +22,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         //============================================================================
         synchronize: true 
         //============================================================================
-    }),],
+    }),
+    PokemonModule,
+    TypeModule,
+    FilmModule,],
   controllers: [],
   providers: [],
 })
